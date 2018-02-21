@@ -2,4 +2,18 @@ ShowExternalHardDrivesOnDesktop -bool FALSE
 ShowHardDrivesOnDesktop -bool FALSE
 ShowRemovableMediaOnDesktop -bool FALSE
 
+# New window target
+# Computer     : `PfCm`
+# Volume       : `PfVo`
+# $HOME        : `PfHm`
+# Desktop      : `PfDe`
+# Documents    : `PfDo`
+# All My Files : `PfAF`
+# Other…       : `PfLo`
+NewWindowTarget -string 'PfHm'
+
+# Search scope
+# This Mac       : `SCev`
+# Current Folder : `SCcf`
+# Previous Scope : `SCsp`
 FXDefaultSearchScope -string SCcf
