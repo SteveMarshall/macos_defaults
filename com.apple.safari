@@ -1,3 +1,4 @@
+ShowFavoritesBar -bool false
 ShowStatusBar -bool true
 
 # Open new tabs/windows with empty page

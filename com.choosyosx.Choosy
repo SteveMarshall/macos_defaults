@@ -1,0 +1,7 @@
+SUAutomaticallyUpdate -bool true
+browsers -array "/Applications/Safari.app" "$HOME/Applications/Google Chrome.app" "$HOME/Applications/Firefox.app"
+displayMenuBarItem -bool false
+
+# Always use my favourite browser
+generalMode -int 0
+runningMode -int 3
