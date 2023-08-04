@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+IFS=$'\n'
+
+for file in *; do
+    if [ -f "$file" \
+      -a "$file" != "README.markdown" \
+      -a "$file" != "README.md" \
+      -a "$file" != "LICENCE" \
+    ]; then
+        echo "Applying ${file}"
+
+        for line in $( cat "${file}" ); do
+            # trim whitespace
+            line=$( echo "$line" | sed -e 's/^ *//' -e 's/ *$//' )
+
+            case "$line" in
+                \#*) ;;  # ignore commented lines
+
+                KILL*)
+                    kill=$( echo $line | cut -c6- )
+                    killall $kill
+                    ;;
+
+                *)
+                    eval defaults write "$file" "$line"
+                    ;;
+            esac
+        done
+    fi
+done
